@@ -1,0 +1,18 @@
+; Authoritative data for alex.local zone
+;
+$TTL 1D
+@	IN SOA	puppet.alex.local	root.puppet.alex.local.	(
+						2019111201	; serial
+						1D		; refresh
+						1H		; retry
+						1W		; expire
+						3H )		; minimum
+
+$ORIGIN		alex.local
+alex.local.	IN	NS	puppet.alex.local.
+puppet		IN	A	10.0.7.5
+fw		IN	A	10.0.7.2
+wks		IN	A	10.0.7.50
+db		IN	A	10.0.7.6
+mw1		IN	A	10.0.7.7
+mw2		IN	A	10.0.7.8
