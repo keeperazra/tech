@@ -1,0 +1,18 @@
+; Authoritative data for alex.local reverse zone
+;
+$TTL 1D
+@	IN SOA	puppet.alex.local	root.puppet.alex.local. (
+						2019111201	; serial
+						1D		; refresh
+						1H		; retry
+						1W		; expire
+						3H )		; minimum
+
+@	IN	NS	puppet.alex.local.
+alex.local.	IN	NS	puppet.alex.local.
+2		IN	PTR	fw.alex.local.
+5		IN	PTR	puppet.alex.local.
+50		IN	PTR	wks.alex.local.
+6		IN	PTR	db.alex.local.
+7		IN	PTR	mw1.alex.local.
+8		IN	PTR	mw2.alex.local.
