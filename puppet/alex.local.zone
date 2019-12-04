@@ -16,3 +16,5 @@ wks		IN	A	10.0.7.50
 db		IN	A	10.0.7.6
 mw1		IN	A	10.0.7.7
 mw2		IN	A	10.0.7.8
+proxy		IN	A	10.0.7.9
+wiki		IN	A	10.0.7.9
