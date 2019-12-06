@@ -17,4 +17,3 @@ alex.local.	IN	NS	puppet.alex.local.
 7		IN	PTR	mw1.alex.local.
 8		IN	PTR	mw2.alex.local.
 9		IN	PTR	proxy.alex.local.
-9		IN	PTR	wiki.alex.local.
