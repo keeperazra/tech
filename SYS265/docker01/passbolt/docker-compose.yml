@@ -1,0 +1,39 @@
+version: '3.4'
+services:
+  db:
+    image: mariadb:10.3
+    volumes:
+      - database_volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: unsecurepassword
+      MYSQL_DATABASE: passbolt
+      MYSQL_USER: passbolt
+      MYSQL_PASSWORD: passbolt
+
+  passbolt:
+    image: passbolt/passbolt:2.12.0-debian
+    tty: true
+    depends_on:
+      - db
+    volumes:
+      - gpg_volume:/var/www/passbolt/config/gpg
+      - images_volume:/var/www/passbolt/webroot/img/public
+    tmpfs:
+      - /run
+    command: ["/usr/bin/wait-for.sh", "-t", "0", "db:3306", "--", "/docker-entrypoint.sh"]
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      # APP_FULL_BASE_URL: passbolt.alex.local
+      DATASOURCES_DEFAULT_HOST: db
+      DATASOURCES_DEFAULT_USERNAME: passbolt
+      DATASOURCES_DEFAULT_PASSWORD: passbolt
+      DATASOURCES_DEFAULT_DATABASE: passbolt
+      DATASOURCES_DEFAULT_PORT: 3306
+      PASSBOLT_REGISTRATION_PUBLIC: 1
+
+volumes:
+  database_volume:
+  gpg_volume:
+  images_volume:
