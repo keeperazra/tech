@@ -1,0 +1,9 @@
+
+---
+  - name: gitlab SYS265
+    hosts: gitlab
+    become: true
+    vars:
+      gitlab_external_url: "https://{{ inventory_hostname }}.alex.local/"
+    roles:
+    - geerlingguy.gitlab

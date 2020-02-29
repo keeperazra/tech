@@ -1,0 +1,13 @@
+
+---
+  - name: install windows applications
+    hosts: windows
+    tasks:
+    - name: Install Firefox and 7zip
+      win_chocolatey:
+        name:
+        - firefox
+        - 7zip
+        - notepadplusplus
+        state: present
+

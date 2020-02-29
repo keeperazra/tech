@@ -1,0 +1,13 @@
+[gitlab]
+ansible1
+[webmin]
+ansible2
+[windows]
+mgmt01-alex
+[windows:vars]
+ansible_user=alex.zimmerman-adm@alex.local
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=ntlm
+ansible_winrm_port=5986
+
